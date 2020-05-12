@@ -2,9 +2,8 @@ package utils;
 
 import java.util.Scanner;
 
-import com.model.Monkey;
-
 import evaluation.Dummy;
+import evaluation.Monkey;
 import sec.ond.time.with.you.MoreDummy;
 
 public class MainUtils {

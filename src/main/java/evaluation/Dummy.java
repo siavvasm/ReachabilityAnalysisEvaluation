@@ -6,8 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.model.Monkey;
-
 /*
  * BUG: The tool is unable to parse these import statements 
  * ERROR MESSAGE: Semantic Error: no visible type named org.jdom.Document
