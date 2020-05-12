@@ -1,0 +1,8 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.reachability</groupId>
+  <artifactId>evaluation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ReachabilityAnalysisEvaluation</name>
+  <description>A project for testing the capabilities and the correctness of the Reachability Analysis tool that is developed as part of the SDK4ED Project. </description>
+</project>
