@@ -26,6 +26,12 @@ public class MoreDummy {
 	public static void fun3(String str1, String str2, String str3) {
 		System.out.println(str3);
 	}
+	
+	public static void fun4(String str1, String str2, String str3) {
+		System.out.println(str1);
+		fun2(str2,str3);
+		
+	}
 
 
 }
