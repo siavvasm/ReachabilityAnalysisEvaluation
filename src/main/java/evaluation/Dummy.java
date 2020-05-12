@@ -105,9 +105,9 @@ public class Dummy {
 		 * MULTIPLE PARAMETERS...
 		 */
 		
-		MoreDummy.fun2(s3,"");
-		MoreDummy.fun2("",s3);
-		MoreDummy.fun3("","",s3);
+//		MoreDummy.fun2(s3,"");
+//		MoreDummy.fun2("",s3);
+//		MoreDummy.fun3("","",s3);
 		
 	}
 	
