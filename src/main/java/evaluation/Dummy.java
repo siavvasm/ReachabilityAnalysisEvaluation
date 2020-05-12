@@ -57,18 +57,30 @@ public class Dummy {
 		
 		// 3.3 Print the String using a internal method that belongs to the same project
 		MoreDummy.printStrMoreDummy(fileString);
-		
+
+/*
+ * 
+ * 
+ * PROBLEMATIC CODE FRAGMENT
+ * 
+ * 
+ * 
+ */
 		// 4. Create an alias
-		String sith = "Non bad String";
+//		String sith = "Non bad String";
+//		
+//		String fileString2 = fileString + sith; /* TAINTED */
+//		String fileString3 = sith + fileString; /* TAINTED */
+//		String fileString4 = fileString + y; /* TAINTED */
+//		
+//		// 5. Call different methods
+//		MoreDummy.printStrMoreDummy(fileString2 + "");
+//		printStr(fileString3);
+//		printStr(fileString4);
 		
-		String fileString2 = fileString + sith; /* TAINTED */
-		String fileString3 = sith + fileString; /* TAINTED */
-		String fileString4 = fileString + y; /* TAINTED */
 		
-		// 5. Call different methods
-		MoreDummy.printStrMoreDummy(fileString2 + "");
-		printStr(fileString3);
-		printStr(fileString4);
+		
+
 		
 	}
 	
