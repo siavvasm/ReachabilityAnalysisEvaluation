@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.Scanner;
+
+import evaluation.Dummy;
 import sec.ond.time.with.you.MoreDummy;
 
 public class MainUtils {
@@ -29,6 +32,13 @@ public class MainUtils {
 		
 		MoreDummy.printStrMoreDummy(str);
 		MoreDummy.printStrMoreDummy(temp);
+		Dummy.printStr(str);
+		System.out.println(str);
+		
+		// 1. Get an integer from the console
+		Scanner scanner = new Scanner(System.in);
+		int retrievedInt = scanner.nextInt(); /* TAINTED */
+		System.out.println(retrievedInt);
 		
 	}
 

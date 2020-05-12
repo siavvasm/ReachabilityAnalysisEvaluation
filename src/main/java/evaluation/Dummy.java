@@ -103,7 +103,7 @@ public class Dummy {
 		
 	}
 	
-	private static void printStr(String str) {
+	public static void printStr(String str) {
 		System.out.println(str);
 	}
 	
