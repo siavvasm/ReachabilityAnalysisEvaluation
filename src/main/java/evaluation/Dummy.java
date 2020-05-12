@@ -79,13 +79,22 @@ public class Dummy {
 //		printStr(fileString4);
 		
 		
+		/*
+		 * Check the return value
+		 */
 		
+		String s = returnString(str); /* TAINTED */
+		MoreDummy.printStrMoreDummy(s);
 
 		
 	}
 	
 	private static void printStr(String str) {
 		System.out.println(str);
+	}
+	
+	public String returnString(String str) {
+		return str;
 	}
 
 }
