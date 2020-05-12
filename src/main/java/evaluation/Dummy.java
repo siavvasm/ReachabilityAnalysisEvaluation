@@ -97,6 +97,8 @@ public class Dummy {
 		
 		String s3 = s.replace("a", "b");
 		
+		MainUtils.broadcastString(s3);
+		
 
 		
 	}
