@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 import sec.ond.time.with.you.MoreDummy;
+import utils.MainUtils;
 
 public class Dummy {
 
@@ -83,8 +84,19 @@ public class Dummy {
 		 * Check the return value
 		 */
 		
+		// COMMENT: The tool is able to mark this variable as tainted. 
+		// COMMENT: However, this wasn't caused by internal check (semantics of the called function). 
+		// COMMENT: We have decided that if a tainted value is passed as a parameter to a method, then if the method returns a value, it may probably be tainted. 
+		// TODO: Check if we can check the body of the method and verify whether the method returns an actually tainted value (HARD)
+		// TODO: Just check the type of the variable. If it is BOOLEAN don't mark it as tainted (EASY)
 		String s = returnString(str); /* TAINTED */
 		MoreDummy.printStrMoreDummy(s);
+		String s1 = MainUtils.echoString(s);
+		String s2 = MainUtils.updateString(s);
+		boolean flag = MainUtils.isEmpty(s);
+		
+		String s3 = s.replace("a", "b");
+		
 
 		
 	}
