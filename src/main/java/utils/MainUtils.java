@@ -1,5 +1,7 @@
 package utils;
 
+import sec.ond.time.with.you.MoreDummy;
+
 public class MainUtils {
 	
 	public static String echoString(String str) {
@@ -17,6 +19,17 @@ public class MainUtils {
 		} else {
 			return false;
 		}
+	}
+	
+	public static void broadcastString(String str) {
+		String temp = "";
+		int x = 1;
+		
+		temp = str;
+		
+		MoreDummy.printStrMoreDummy(str);
+		MoreDummy.printStrMoreDummy(temp);
+		
 	}
 
 }
