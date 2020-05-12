@@ -33,7 +33,7 @@ public class MainUtils {
 		MoreDummy.printStrMoreDummy(str);
 		MoreDummy.printStrMoreDummy(temp);
 		Dummy.printStr(str);
-		System.out.println(str);
+//		System.out.println(str);
 		
 		// 1. Get an integer from the console
 //		Scanner scanner = new Scanner(System.in);
