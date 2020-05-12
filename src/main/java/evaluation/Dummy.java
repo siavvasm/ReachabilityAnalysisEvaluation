@@ -34,22 +34,28 @@ public class Dummy {
 		 */
 		
 		// 1. Create the appropriate readers
-		FileReader fr = new FileReader("path/to/file");
-		BufferedReader br = new BufferedReader(fr);
 		
-		// 2. Read a String from the selected file
-		String fileString = br.readLine(); /* TAINTED */
+		try {
+			FileReader fr = new FileReader("path/to/file");
+			BufferedReader br = new BufferedReader(fr);
+			
+			// 2. Read a String from the selected file
+			String fileString = br.readLine(); /* TAINTED */
+			
+			// 3. Feed the String to different methods
+			
+			// 3.1 Print the String to the console
+			System.out.println("The received String is: " + fileString);
+			
+			// 3.2 Print the String using a local method
+			printStr(fileString);
+			
+			// 3.3 Print the String using a internal method that belongs to the same project
+			MoreDummy.printStrMoreDummy(fileString);
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 		
-		// 3. Feed the String to different methods
-		
-		// 3.1 Print the String to the console
-		System.out.println(fileString);
-		
-		// 3.2 Print the String using a local method
-		printStr(fileString);
-		
-		// 3.3 Print the String using a internal method that belongs to the same project
-		MoreDummy.printStrMoreDummy(fileString);
 	}
 	
 	private static void printStr(String str) {
