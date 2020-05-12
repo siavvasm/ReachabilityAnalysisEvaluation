@@ -61,12 +61,12 @@ public class Dummy {
 		// 4. Create an alias
 		String sith = "Non bad String";
 		
-		String fileString2 = fileString + sith;
-		String fileString3 = sith + fileString;
-		String fileString4 = fileString + y;
+		String fileString2 = fileString + sith; /* TAINTED */
+		String fileString3 = sith + fileString; /* TAINTED */
+		String fileString4 = fileString + y; /* TAINTED */
 		
 		// 5. Call different methods
-		MoreDummy.printStrMoreDummy(fileString2 + "");
+		MoreDummy.printStrMoreDummy(fileString2);
 		printStr(fileString3);
 		printStr(fileString4);
 		
