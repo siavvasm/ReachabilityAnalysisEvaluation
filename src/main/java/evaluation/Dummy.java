@@ -66,7 +66,7 @@ public class Dummy {
 		String fileString4 = fileString + y; /* TAINTED */
 		
 		// 5. Call different methods
-		MoreDummy.printStrMoreDummy(fileString2);
+		MoreDummy.printStrMoreDummy(fileString2 + "");
 		printStr(fileString3);
 		printStr(fileString4);
 		
