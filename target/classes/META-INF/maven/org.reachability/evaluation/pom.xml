@@ -5,4 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ReachabilityAnalysisEvaluation</name>
   <description>A project for testing the capabilities and the correctness of the Reachability Analysis tool that is developed as part of the SDK4ED Project. </description>
+<!-- https://mvnrepository.com/artifact/jdom/jdom -->
+<dependencies>
+<dependency>
+    <groupId>jdom</groupId>
+    <artifactId>jdom</artifactId>
+    <version>1.0</version>
+</dependency>
+</dependencies>
+
+
+
 </project>

@@ -1,9 +1,16 @@
 package evaluation;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
+
 import sec.ond.time.with.you.MoreDummy;
 import utils.MainUtils;
 
@@ -123,6 +130,25 @@ public class Dummy {
 		MoreDummy.fun3("",s3,"");
 		MoreDummy.fun3(s3,s11,s12);
 		MoreDummy.fun4(s11,s12,s3);
+		
+		/*
+		 * Another dangerous function...
+		 * Import String data from an XML file... 
+		 */
+		
+		//Import the desired xml file with the violations and create the tree representation
+		SAXBuilder builder = new SAXBuilder();
+		Document doc = null;
+		try {
+			doc = builder.build(new File(""));
+		} catch (JDOMException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Element root = (Element) doc.getRootElement();
+		
+		String s13 = root.getAttributeValue("name");
+		
 
 		
 	}
