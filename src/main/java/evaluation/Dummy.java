@@ -122,7 +122,7 @@ public class Dummy {
 		MoreDummy.fun2("",s3);
 		MoreDummy.fun3("",s3,"");
 		MoreDummy.fun3(s3,s11,s12);
-		MoreDummy.fun4(s11,s3,s12);
+		MoreDummy.fun4(s11,s12,s3);
 
 		
 	}
