@@ -30,6 +30,15 @@ public class MainUtils {
 		
 		temp = str;
 		
+		/*
+		 * BUG: When the "str" parameter contains a tainted variable, the produced report contains only 
+		 *      the path of the last method that receives it as an input (i.e., the println() method in 
+		 *      the given example below)
+		 *      
+		 * BUG: When the "str" parameter contains a tainted variable, its aliases are not considered
+		 *      at all. In other words, in the present example the "temp" variable is not considered
+		 *      tainted, whereas its path is not traced (i.e., method call: MoreDummy.printStrMoreDummy(temp).
+		 */
 		MoreDummy.printStrMoreDummy(str);
 		MoreDummy.printStrMoreDummy(temp);
 		Dummy.printStr(str);

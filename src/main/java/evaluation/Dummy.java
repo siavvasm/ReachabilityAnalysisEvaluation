@@ -6,10 +6,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.JDOMException;
-import org.jdom.input.SAXBuilder;
+/*
+ * BUG: The tool is unable to parse these import statements 
+ * ERROR MESSAGE: Semantic Error: no visible type named org.jdom.Document
+ */
+//import org.jdom.Document;
+//import org.jdom.Element;
+//import org.jdom.JDOMException;
+//import org.jdom.input.SAXBuilder;
 
 import sec.ond.time.with.you.MoreDummy;
 import utils.MainUtils;
@@ -58,6 +62,14 @@ public class Dummy {
 		// 3. Feed the String to different methods
 		
 		// 3.1 Print the String to the console
+		/*
+		 * BUG: The tool things that the concatenation is the invocation of the append() method. 
+		 * 		So it creates a path based on this method call.
+		 * 		In addition to this, it neglects the actual method call (i.e., the path is not 
+		 *      included in the report)
+		 *      For example, in the call below, the tool reports a path to the append() method,
+		 *      whereas it does not report a path to the System.out.println() method. 
+		 */
 		System.out.println("The received String is: " + fileString);
 		
 		// 3.2 Print the String using a local method
@@ -74,6 +86,12 @@ public class Dummy {
  * 
  * 
  */
+		
+		/*
+		 * BUG: The tool things that the concatenation is the invocation of the append() method. 
+		 * 		So it creates a path based on this method call.
+		 *      These paths MUST not be reported. 
+		 */
 		// 4. Create an alias
 //		String sith = "Non bad String";
 //		
@@ -136,19 +154,28 @@ public class Dummy {
 		 * Import String data from an XML file... 
 		 */
 		
-		//Import the desired xml file with the violations and create the tree representation
-		SAXBuilder builder = new SAXBuilder();
-		Document doc = null;
-		try {
-			doc = builder.build(new File(""));
-		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Element root = (Element) doc.getRootElement();
+		/*
+		 * BUG: The tool is unable to parse these import statements 
+		 * ERROR MESSAGE: Semantic Error: no visible type named org.jdom.Document
+		 */
+
+//		SAXBuilder builder = new SAXBuilder();
+//		Document doc = null;
+//		try {
+//			doc = builder.build(new File(""));
+//		} catch (JDOMException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		Element root = (Element) doc.getRootElement();
+//		
+//		String s13 = root.getAttributeValue("name");
 		
-		String s13 = root.getAttributeValue("name");
+		/*
+		 * METHOD CALL AS A PARAMETER
+		 */
 		
+		MainUtils.echoString(s3.replace("a", "b"));
 
 		
 	}
