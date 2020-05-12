@@ -32,13 +32,13 @@ public class MainUtils {
 		
 		MoreDummy.printStrMoreDummy(str);
 		MoreDummy.printStrMoreDummy(temp);
-//		Dummy.printStr(str);
-//		System.out.println(str);
+		Dummy.printStr(str);
+		System.out.println(str);
 		
 		// 1. Get an integer from the console
-//		Scanner scanner = new Scanner(System.in);
-//		int retrievedInt = scanner.nextInt(); /* TAINTED */
-//		System.out.println(retrievedInt);
+		Scanner scanner = new Scanner(System.in);
+		int retrievedInt = scanner.nextInt(); /* TAINTED */
+		System.out.println(retrievedInt);
 //		
 	}
 

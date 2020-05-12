@@ -104,10 +104,14 @@ public class Dummy {
 		/*
 		 * MULTIPLE PARAMETERS...
 		 */
+		String s4 = s3;
+		String s5 = s3;
+		String s6 = s3;
+		String s7 = s3;
 		
-//		MoreDummy.fun2(s3,"");
-//		MoreDummy.fun2("",s3);
-//		MoreDummy.fun3("","",s3);
+		MoreDummy.fun2(s4,"");
+		MoreDummy.fun2("",s5);
+		MoreDummy.fun3("","",s6);
 		
 	}
 	
