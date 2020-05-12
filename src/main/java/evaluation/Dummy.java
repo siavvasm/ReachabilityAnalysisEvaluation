@@ -97,9 +97,17 @@ public class Dummy {
 		
 		String s3 = s.replace("a", "b");
 		
+		// COMMENT: The tool misses the tainted variables and paths created by aliases of the s3 variable!
 		MainUtils.broadcastString(s3);
 		
-
+		
+		/*
+		 * MULTIPLE PARAMETERS...
+		 */
+		
+		MoreDummy.fun2(s3,"");
+		MoreDummy.fun2("",s3);
+		MoreDummy.fun3("","",s3);
 		
 	}
 	

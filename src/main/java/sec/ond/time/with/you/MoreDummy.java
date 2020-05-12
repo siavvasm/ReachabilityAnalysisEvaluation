@@ -14,8 +14,18 @@ public class MoreDummy {
 		// 2. Pass the tainted data to another method
 		printStrMoreDummy(str1);
 	}
+	
 	public static void printStrMoreDummy(String str) {
 		System.out.println(str);
 	}
+	
+	public static void fun2(String str1, String str2) {
+		System.out.println(str2);
+	}
+	
+	public static void fun3(String str1, String str2, String str3) {
+		System.out.println(str3);
+	}
+
 
 }
