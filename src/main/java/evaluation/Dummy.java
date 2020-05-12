@@ -122,6 +122,7 @@ public class Dummy {
 		MoreDummy.fun2("",s8);
 		MoreDummy.fun3("",s8,"");
 		MoreDummy.fun3(s10,s11,s12);
+		MoreDummy.fun4(s10,s11,s12);
 
 		
 	}
