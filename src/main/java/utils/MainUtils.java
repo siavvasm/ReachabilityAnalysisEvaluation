@@ -2,6 +2,8 @@ package utils;
 
 import java.util.Scanner;
 
+import com.model.Monkey;
+
 import evaluation.Dummy;
 import sec.ond.time.with.you.MoreDummy;
 
@@ -49,6 +51,10 @@ public class MainUtils {
 		int retrievedInt = scanner.nextInt(); /* TAINTED */
 		System.out.println(retrievedInt);
 //		
+	}
+	
+	public static void printMonkeyName(Monkey monkey) {
+		System.out.println(monkey.getName());
 	}
 
 }

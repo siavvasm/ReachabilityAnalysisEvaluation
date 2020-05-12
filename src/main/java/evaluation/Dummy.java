@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.model.Monkey;
+
 /*
  * BUG: The tool is unable to parse these import statements 
  * ERROR MESSAGE: Semantic Error: no visible type named org.jdom.Document
@@ -175,7 +177,45 @@ public class Dummy {
 		 * METHOD CALL AS A PARAMETER
 		 */
 		
+		/*
+		 * BUG: Similarly to the String concatenation, the tool detects that the tainted 
+		 *      variable s3 executes the replace() method. Then it creates a path for this call:
+		 *      
+		 *      {
+                    "variable_name": "s3",
+                    "function_name": "executeThisCode",
+                    "dangerous_function_name": "java.util.Scanner.nextInt",
+                    "path": [
+                        {
+                            "function_name": "executeThisCode",
+                            "class_name": "evaluation.Dummy",
+                            "parameter": -1
+                        },
+                        {
+                            "function_name": "replace",
+                            "class_name": " java.lang.String",
+                            "parameter": -1
+                        }
+                    ]
+                },
+
+		 *	 This path MUST not be created
+		 * 	In addition to this, the actual path (i.e., the call of the method MainUtils.echoString()) is 
+		 * 	not reported.
+		 *      
+		 */
 		MainUtils.echoString(s3.replace("a", "b"));
+		
+		/*
+		 * OBJECT...
+		 */
+		Monkey monkey = new Monkey();
+		
+		monkey.setX(1);
+		monkey.setY(2);
+		monkey.setName(s3);
+		
+		MainUtils.printMonkeyName(monkey);
 
 		
 	}
