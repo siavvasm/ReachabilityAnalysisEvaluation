@@ -34,27 +34,41 @@ public class Dummy {
 		 */
 		
 		// 1. Create the appropriate readers
+		FileReader fr = null;
+		BufferedReader br = null;
 		
 		try {
-			FileReader fr = new FileReader("path/to/file");
-			BufferedReader br = new BufferedReader(fr);
-			
-			// 2. Read a String from the selected file
-			String fileString = br.readLine(); /* TAINTED */
-			
-			// 3. Feed the String to different methods
-			
-			// 3.1 Print the String to the console
-			System.out.println("The received String is: " + fileString);
-			
-			// 3.2 Print the String using a local method
-			printStr(fileString);
-			
-			// 3.3 Print the String using a internal method that belongs to the same project
-			MoreDummy.printStrMoreDummy(fileString);
+			fr = new FileReader("path/to/file");
+			br = new BufferedReader(fr);
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
+		
+		// 2. Read a String from the selected file
+		String fileString = br.readLine(); /* TAINTED */
+		
+		// 3. Feed the String to different methods
+		
+		// 3.1 Print the String to the console
+		System.out.println("The received String is: " + fileString);
+		
+		// 3.2 Print the String using a local method
+		printStr(fileString);
+		
+		// 3.3 Print the String using a internal method that belongs to the same project
+		MoreDummy.printStrMoreDummy(fileString);
+		
+		// 4. Create an alias
+		String sith = "Non bad String";
+		
+		String fileString2 = fileString + sith;
+		String fileString3 = sith + fileString;
+		String fileString4 = fileString + y;
+		
+		// 5. Call different methods
+		MoreDummy.printStrMoreDummy(fileString2 + "");
+		printStr(fileString3);
+		printStr(fileString4);
 		
 	}
 	
