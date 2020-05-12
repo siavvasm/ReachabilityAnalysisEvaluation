@@ -108,10 +108,19 @@ public class Dummy {
 		String s5 = s3;
 		String s6 = s3;
 		String s7 = s3;
+		String s8 = s3;
+		String s9 = s3;
+		String s10 = s3;
+		String s11 = s3;
+		String s12 = s3;
 		
 		MoreDummy.fun2(s4,"");
 		MoreDummy.fun2("",s5);
-		MoreDummy.fun3("","",s6);
+		MoreDummy.fun3(s6,"","");
+		MoreDummy.fun3("",s7,"");
+		MoreDummy.fun3("","",s8);
+		MoreDummy.fun3(s10,s11,s12);
+
 		
 	}
 	
